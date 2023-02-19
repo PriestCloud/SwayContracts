@@ -9,3 +9,5 @@ impl MyContract for Contract {
         true
     }
 }
+
+//Testing 1, 2 1, 2...
