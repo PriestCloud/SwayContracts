@@ -29,6 +29,9 @@ abi TestContract {
     #[storage(read, write)]fn increment_counter(amount: u64) -> u64;
 }
 
+// "abi TestContract" is the declaration of our Application Binary Interface. After declaring with the "abi" keyword, the next word 
+//  should be the name of the ABI.  
+
 storage {
     counter: u64 = 0,
 }
