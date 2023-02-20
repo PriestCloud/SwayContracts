@@ -30,7 +30,13 @@ abi TestContract {
 }
 
 // "abi TestContract" is the declaration of our Application Binary Interface. After declaring with the "abi" keyword, the next word 
-//  should be the name of the ABI.  
+//  should be the name of the ABI. 
+
+// second line is us declaring a method in our abi called "initialize_counter" that takes in a value parameter
+// storage keyword is used to store persistent data in our contract.
+
+
+//the third line is also another method declaration called "increment_counter" with  amount parameter. 
 
 storage {
     counter: u64 = 0,
