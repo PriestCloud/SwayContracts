@@ -33,7 +33,6 @@ abi TestContract {
 //  should be the name of the ABI. 
 
 // second line is us declaring a method in our abi called "initialize_counter" that takes in a value parameter
-// storage keyword is used to store persistent data in our contract.
 
 
 //the third line is also another method declaration called "increment_counter" with  amount parameter. 
@@ -41,16 +40,24 @@ abi TestContract {
 storage {
     counter: u64 = 0,
 }
+// storage keyword is used to store persistent data in our contract.
+// Storage here means that there is a variable called Counter that we want to be updated whenever new values are added to it.
 
+
+
+// we use (write) keyword to give a storage value a particular value.  
 impl TestContract for Contract {
     #[storage(write)]fn initialize_counter(value: u64) -> u64 {
         storage.counter = value;
         value
     }
 
+// we use (read) keyword to get access to the content pf a storage variable.  
+
     #[storage(read, write)]fn increment_counter(amount: u64) -> u64 {
         let incremented = storage.counter + amount;
         storage.counter = incremented;
+        // this is where we aad the logic that increases the counter variabke with amount
         incremented
     }
 }
